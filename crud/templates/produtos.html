@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{% url 'produtos' %}" method="get">
+    <input name="search" type="text" placeholder="Search">
+    <button type="submit">Pesquisar</button>
+    <a href="{% url 'produtos' %}">Limpar</a>
+</form>
+
+<ul>
+    {% for produto in object_list %}
+        <li>{{produto.nome}}
+            <a href="{% url 'edita' produto.id %}" style="color:black"><i class="fa fa-pencil-alt"></i></a>
+            <a href="{% url 'deleta' produto.id %}" style="color:black"><i class="fas fa-trash-alt"></i></a>
+        </li>
+    {% empty %}
+        <li>Não há Produtos cadastrados.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

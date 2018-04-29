@@ -1,0 +1,50 @@
+{% load static %}
+<head>
+        <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/blog-home.css' %}" rel="stylesheet">
+
+     <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+</head>
+
+<bodu>
+    <div class="container">
+
+        <!-- Inicio da Row -->
+          <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-12">
+
+              <h1 class="my-4" style="text-align:center">
+                <small>Login</small>
+              </h1>
+                <div class="card mb-4" style="text-align:center">
+                <div class="card-body" style="width:1100px">
+                    <div class="col-md-10 col-lg-8 col-xl-5 mx-auto">
+                    <form method="post">
+                        {% csrf_token %}
+                        Email
+                        <div class="col-12 col-md-12 mb-2 mb-md-0">
+                        <input name="username" class="form-control">
+                        </div>
+                        <br>
+                        Senha
+                        <div class="col-12 col-md-12 mb-2 mb-md-0">
+                        <input name="password" type="password" class="form-control">
+                        </div>
+                        <br>
+                        <button class="btn btn-primary" type="submit">Logar</button>
+                    </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+          </div> <!-- Fim da Row -->
+    </div>
+</bodu>

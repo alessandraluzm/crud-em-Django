@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>Deletar "{{produto.nome}}"?</p>
+    <a href="{% url 'produtos' %}">Voltar</a>
+    <input type="submit" value="Confirma">
+</form>
+{% endblock %}
